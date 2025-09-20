@@ -1,29 +1,92 @@
-
 .bi {
-    vertical-align: -.125em;
-    fill: currentColor;
+  vertical-align: -.125em;
+  fill: currentColor;
 }
 
 .feature-icon {
-    width: 4rem;
-    height: 4rem;
-    border-radius: .75rem;
+  width: 4rem;
+  height: 4rem;
+  border-radius: .75rem;
 }
 
 .cover-container {
-    max-width: 42em;
+  max-width: 42em;
 }
 
-body{
-    background-color: beige;
+body {
+  background-color: beige;
 }
 
 .raj_fontsize {
-    font-size: 1rem;
+  font-size: 1rem;
+}
+
+@media (min-width: 1000px) {
+  .raj_fontsize {
+    font-size: 1.5rem;
+  }
+}
+
+.text-purple {
+  color: purple;
+}
+
+.kids-title {
+  color: #3498db;
+  /* Sky Blue */
+}
+
+.teens-title {
+  color: #8e44ad;
+  /* Medium Purple */
+}
+
+.pro-title {
+  color: #006666;
+  /* Dark Slate Gray */
+}
+
+
+/* For screens 576px or smaller (mobile) */
+@media (max-width: 576px) {
+  #courseTitle {
+    font-size: 1.5rem;
+    /* Smaller font for mobile */
   }
 
-  @media (min-width: 1000px) {
-    .raj_fontsize {
-      font-size: 1.5rem;
-    }
+  h4.kids-title,
+  h4.teens-title,
+  h4.pro-title {
+    font-size: 1rem;
+    /* Reduce group headings on mobile */
   }
+}
+
+.course-content {
+  font-size: 1rem;
+  /* 16px */
+}
+
+/* Reduce font size on mobile screens */
+@media (max-width: 576px) {
+  .course-content {
+    font-size: 0.875rem;
+    /* 14px */
+  }
+}
+
+#photos {
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center if needed */
+  padding: 20px;           /* optional spacing */
+}
+
+.carousel-inner img {
+  width: 100%;       /* scale to container width */
+  max-width: 600px;  /* choose a fixed max width */
+  height: auto;      /* keep aspect ratio */
+  object-fit: cover; /* crop/fit images nicely */
+  display: block;
+  margin: 0 auto;    /* center images horizontally */
+}

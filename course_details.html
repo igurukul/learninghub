@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Course Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./index.html">
+          <img src="./assets/images/new_logo.jpg" alt="Owl icon" height="40" />
+          i Gurukul
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./about.html">About</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Courses</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="./course_details.html?course=public-speaking">Public Speaking & Communicative Skill</a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./course_details.html?course=personality-grooming">Personality Grooming</a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./course_details.html?course=self-expression">Self Expression</a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./course_details.html?course=leadership-development">Leadership Development</a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./course_details.html?course=parental-guidance">Parental Guidance</a>
+                </li>
+                <!-- <li><hr class="dropdown-divider" /></li> -->
+                <!-- <li><a class="dropdown-item" href="./course_details.html?course=yoga">Yoga</a></li> -->
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Course Content -->
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <main class="px-3">
+        <a href="./index.html" class="btn btn-success">HOME</a>
+        <hr />
+        <div class="container mt-6">
+          <h1 id="courseTitle" class="fs-2" style="color: #1a237e"></h1>
+          <p id="courseText"></p>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      // Course details dictionary
+      const courses = {
+        "public-speaking": {
+          title: "Public Speaking & Communicative Skill",
+          text: `
+        <hr/>
+        <h4 class="kids-title">For Kids (Ages 6–12):</h4>
+        <ul>
+          <li>Children learn to express their thoughts clearly in front of peers.</li>
+          <li>Fun activities build confidence through storytelling and role play.</li>
+          <li>The course nurtures listening skills and respectful communication.</li>
+        </ul>
+
+        <h4 class="teens-title">For Teens (Ages 13–19):</h4>
+        <ul>
+          <li>Teens develop structured speaking and presentation skills.</li>
+          <li>Interactive sessions focus on interview, group discussion, and self-expression.</li>
+          <li>Emphasis is placed on voice modulation, clarity, and body language.</li>
+        </ul>
+
+        <h4 class="pro-title">Young Adults & Professionals:</h4>
+        <ul>
+          <li>Professionals refine communication for workplace and leadership contexts.</li>
+          <li>Training focuses on persuasive speaking, negotiation, and impactful delivery.</li>
+          <li>Real-world scenarios and mock presentations sharpen confidence.</li>
+        </ul>`,
+        },
+        "personality-grooming": {
+          title: "Personality Grooming",
+          text: `
+        <hr/>
+        <h4 class="kids-title">For Kids (Ages 6–12):</h4>
+        <ul>
+          <li>Children are introduced to good manners and polite behavior.</li>
+          <li>Fun activities help them build confidence in everyday interactions.</li>
+          <li>The program gently shapes respectful and empathetic habits.</li>
+        </ul>
+
+        <h4 class="teens-title">For Teens (Ages 13–19):</h4>
+        <ul>
+          <li>Teens explore self-confidence, poise, and effective first impressions.</li>
+          <li>Workshops focus on social etiquette and interpersonal communication.</li>
+          <li>They learn grooming, style, and self-awareness for personal growth.</li>
+        </ul>
+
+        <h4 class="pro-title">Young Adults & Professionals:</h4>
+        <ul>
+          <li>Professionals refine executive presence and personal branding.</li>
+          <li>Sessions emphasize professional etiquette, dressing, and communication.</li>
+          <li>They learn techniques to project confidence in meetings and presentations.</li>
+        </ul>`,
+        },
+        "self-expression": {
+          title: "Self Expression",
+          text: `
+        <hr/>
+        <h4 class="kids-title">For Kids (Ages 6–12):</h4>
+        <ul>
+          <li>Kids explore creativity through storytelling, drawing, and simple role play.</li>
+          <li>They learn to share feelings confidently in a safe environment.</li>
+          <li>Activities encourage imagination and open communication.</li>
+        </ul>
+
+        <h4 class="teens-title">For Teens (Ages 13–19):</h4>
+        <ul>
+          <li>Teens develop their unique voice through debates, theatre, and writing.</li>
+          <li>The course encourages originality and confidence in public settings.</li>
+          <li>They learn to communicate emotions with clarity and respect.</li>
+        </ul>
+
+        <h4 class="pro-title">Young Adults & Professionals:</h4>
+        <ul>
+          <li>Professionals learn to express thoughts persuasively in diverse settings.</li>
+          <li>Workshops focus on creativity in communication and presentations.</li>
+          <li>The program strengthens storytelling, articulation, and authenticity.</li>
+        </ul>`,
+        },
+        "leadership-development": {
+          title: "Leadership Development",
+          text: `
+        <hr/>
+        <h4 class="kids-title">For Kids (Ages 6–12):</h4>
+        <ul>
+          <li>Children are encouraged to take initiative in group activities.</li>
+          <li>Fun games teach teamwork, responsibility, and cooperation.</li>
+          <li>The program builds the foundation for decision-making skills.</li>
+        </ul>
+
+        <h4 class="teens-title">For Teens (Ages 13–19):</h4>
+        <ul>
+          <li>Teens explore qualities of effective leadership through projects and debates.</li>
+          <li>Teens learn teamwork, accountability, and conflict resolution skills.</li>
+          <li>The course emphasizes integrity, vision, and problem-solving.</li>
+        </ul>
+
+        <h4 class="pro-title">Young Adults & Professionals:</h4>
+        <ul>
+          <li>Professionals gain strategies to inspire and motivate teams.</li>
+          <li>The program develops decision-making, delegation, and mentoring skills.</li>
+          <li>Workshops cover leadership styles, emotional intelligence, and influence.</li>
+        </ul>`,
+        },
+        "parental-guidance": {
+          title: "Parental Guidance",
+          text: `
+        <hr/>
+        <h4 class="pro-title">For Young Parents:</h4>
+        <ul>
+          <li>Parents learn strategies to support their child’s emotional growth.</li>
+          <li>The program covers effective communication and active listening at home.</li>
+          <li>Guidance is provided on managing discipline with empathy and respect.</li>
+          <li>Parents gain tools to balance academic and personal development needs.</li>
+          <li>Sessions explore building trust and fostering positive family relationships.</li>
+          <li>The course equips parents to nurture independence while offering support.</li>
+        </ul>`,
+        },
+        yoga: {
+          title: "Yoga",
+          text: "Experience physical and mental balance through guided yoga practices. The course introduces breathing techniques and relaxation exercises.",
+        },
+      };
+
+      // Get course from query param
+      const urlParams = new URLSearchParams(window.location.search);
+      const courseKey = urlParams.get("course");
+
+      if (courses[courseKey]) {
+        document.getElementById("courseTitle").innerText = courses[courseKey].title;
+        document.getElementById("courseText").innerHTML = courses[courseKey].text;
+      } else {
+        document.getElementById("courseTitle").innerText = "Course Not Found";
+        document.getElementById("courseText").innerText = "Please select a valid course from the menu.";
+      }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
